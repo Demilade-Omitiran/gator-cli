@@ -1,0 +1,10 @@
+-- +goose Up
+CREATE TABLE USERS (
+  id UUID PRIMARY KEY DEFAULT GEN_RANDOM_UUID(),
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP NOT NULL,
+  name VARCHAR NOT NULL UNIQUE
+);
+
+-- +goose Down
+DROP TABLE users;

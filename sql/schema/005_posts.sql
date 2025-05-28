@@ -1,0 +1,17 @@
+-- +goose Up
+CREATE TABLE POSTS (
+  id UUID PRIMARY KEY DEFAULT GEN_RANDOM_UUID(),
+  created_at TIMESTAMP NOT NULL,
+  updated_at TIMESTAMP NOT NULL,
+  title VARCHAR,
+  url VARCHAR NOT NULL UNIQUE,
+  description VARCHAR,
+  published_at TIMESTAMP NOT NULL,
+  feed_id UUID NOT NULL,
+  CONSTRAINT post_feed_id_fkey FOREIGN KEY (feed_id)
+    REFERENCES FEEDS(id)
+    ON DELETE CASCADE
+);
+
+-- +goose Down
+DROP TABLE POSTS;
