@@ -463,62 +463,62 @@ func handlerHelp(s *state, cmd command) error {
 	fmt.Println("Supported Commands")
 
 	supportedCommands := []supportedCommand{
-		supportedCommand{
+		{
 			name:        "login",
 			description: "logs a user in",
 			params:      []string{"name"},
 		},
-		supportedCommand{
+		{
 			name:        "register",
 			description: "registers and logs in a user",
 			params:      []string{"name"},
 		},
-		supportedCommand{
+		{
 			name:        "reset",
 			description: "clears the database",
 			params:      []string{},
 		},
-		supportedCommand{
+		{
 			name:        "users",
 			description: "fetches all the users",
 			params:      []string{},
 		},
-		supportedCommand{
+		{
 			name:        "agg",
 			description: "does the aggregation of blogs from feeds in the database",
 			params:      []string{"time between requests (to fetch feeds)"},
 		},
-		supportedCommand{
+		{
 			name:        "addfeed",
 			description: "adds a feed for the currently logged-in user (user-login required)",
 			params:      []string{"feed name", "feed url"},
 		},
-		supportedCommand{
+		{
 			name:        "feeds",
 			description: "fetches and prints feeds",
 			params:      []string{},
 		},
-		supportedCommand{
+		{
 			name:        "follow",
 			description: "follows a feed for the currently logged-in user (user-login required)",
 			params:      []string{"feed url"},
 		},
-		supportedCommand{
+		{
 			name:        "following",
 			description: "prints all feeds being followed by the currently logged-in user (user-login required)",
 			params:      []string{},
 		},
-		supportedCommand{
+		{
 			name:        "unfollow",
 			description: "unfollows a feed for the currently logged-in user (user-login required)",
 			params:      []string{"feed url"},
 		},
-		supportedCommand{
+		{
 			name:        "browse",
 			description: "fetches feed posts for the currently logged-in user (user-login required)",
 			params:      []string{"number of posts (optional)"},
 		},
-		supportedCommand{
+		{
 			name:        "help",
 			description: "displays all the supported commands",
 			params:      []string{},
